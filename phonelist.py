@@ -35,7 +35,7 @@ def save_phonelist(C):
 def print_help():
     print("""Hello and welcome to the phone list, available commands:
   add    - add a phone number
-  delete - delete a contact
+  delete - delete a contact always
   help   - print the help
   list   - list all phone numbers
   quit   - quit the program
