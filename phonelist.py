@@ -1,6 +1,14 @@
-import sqlite3
-conn = sqlite3.connect("phone.db")
-
+# import sqlite3
+# conn = sqlite3.connect("phone.db")
+import psycopg2
+conn = psycopg2.connect(
+           host="localhost",
+           database="phone",
+           user="phone",
+           password="abc123"
+       )
+       
+# the rest of the file exactly as before
 def read_phonelist(C):
     cur = C.cursor()
     cur.execute("SELECT * FROM phonelist;")
