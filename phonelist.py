@@ -31,26 +31,40 @@ def save_phonelist(C):
         print("No changes!")
     cur.close()
     
-print("""Hello and welcome to the phone list, available commands:
+
+def print_help():
+    print("""Hello and welcome to the phone list, available commands:
   add    - add a phone number
   delete - delete a contact
+  help   - print the help
   list   - list all phone numbers
-  quit   - quit the program""")
-
+  quit   - quit the program
+  save   - save the phone list """)
+  
+print_help()
 while True: ## REPL - Read Execute Program Loop
-    cmd = input("Command: ")
+    cmd = input("Command: ").upper(). strip()
     if cmd == "LIST":
         print(read_phonelist(conn))
     elif cmd == "ADD":
         name = input("  Name: ")
         phone = input("  Phone: ")
         add_phone(conn, name, phone)
+        print(f" Added {name} with {phone}")
     elif cmd == "DELETE":
         name = input("  Name: ")
         delete_phone(conn, name)
+        print(f" Deleted {name}")
+            
+    elif cmd == "HELP":
+        print_help()
     elif cmd == "QUIT":
         save_phonelist(conn)
         exit()
+        print(f" Goodbye")
+    elif cmd == "Save":
+        save_phonelist(conn)
+        print(f" Phonelist saved!")
     else:
         print(f"  Unknown command: '{cmd}' ")
         
