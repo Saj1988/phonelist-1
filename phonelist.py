@@ -37,7 +37,7 @@ def print_help():
   add    - add a phone number
   delete - delete a contact
   help   - print the help
-  list   - list all phone numbers
+  list   - list all available phone numbers 
   quit   - quit the program
   save   - save the phone list """)
   
